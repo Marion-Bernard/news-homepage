@@ -44,6 +44,16 @@
     background-color: #FFFDFA;
   }
 
+  header,section{
+    margin: 1rem;
+  }
+
+  section{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid red;
+  }
+
   a {
     text-decoration: none;
   }
@@ -52,14 +62,27 @@
     color: #00001A;
     font-size: 2.5rem;
     font-weight: 800;
-    line-height: 2.5rem;
-    /* 100% */
+    line-height: 2.5rem;   /* 100% */
+    margin : 1.5rem 0rem 1rem 0rem;
   }
 
   h2 {
     font-size: 2rem;
     font-weight: 700;
     color: #E9AA52;
+    margin-bottom: 2.19rem;
+  }
+
+  .hero p {
+    margin-bottom: 1.5rem;
+  }
+
+  .news-list{
+    border-bottom: 1px solid #5E607A;
+    border : 1px solid red;
+    padding: 1.81rem;
+    margin: 0.8rem;
+    /*padding-bottom: 1.81rem;*/
   }
 
   .menu-link {
@@ -74,6 +97,7 @@
     line-height: 1.5rem;
     /* 120% */
     color: #FFFDFA;
+    margin-bottom: 0.5rem;
   }
 
   .news p {
