@@ -44,15 +44,15 @@
     background-color: #FFFDFA;
   }
 
-  header,section{
+  /* header,section{
     margin: 1rem;
-  }
+  } */
 
-  section{
+  /* section{
     margin-top: 2rem;
     margin-bottom: 2rem;
     border: 1px solid red;
-  }
+  } */
 
   a {
     text-decoration: none;
@@ -71,6 +71,12 @@
     font-weight: 700;
     color: #E9AA52;
     margin-bottom: 2.19rem;
+  }
+
+  .container{
+    width: min(100%,71.375rem); /*(prend la plus petite des deux valeurs, revient à donner une valeur max. 71.375rem; /*69.375 contenu + 1rem de padding gauche + 1rem padding droite*/
+    margin-inline : auto;
+    padding-inline: 1rem;
   }
 
   .hero p {
