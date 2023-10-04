@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News homepage</title>
 
-    <link href="css\reset.css" rel="stylesheet">
-    <link href="css\helpers.css" rel="stylesheet">
-    <link href="css\style.css" rel="stylesheet">
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/helpers.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
 
 </head>
@@ -18,7 +18,7 @@
     <header class="main-header">
         <div class="container">
             <div class="logo">
-                <a href="#"><img src="img\logo.svg" alt="Logo news"></a>
+                <a href="#"><img src="img/logo.svg" alt="Logo news"></a>
             </div>
             <nav class="main-nav" id="main-nav">
                 <button class="toggle-menu">Menu</button>
@@ -32,17 +32,20 @@
             </nav>
         </div>
     </header>
-    <main>
+
+    <main id="main-content">
 
         <section class="hero">
-            <div class="container">
-                <div><img src="img\vasilis-chatzopoulos-6lwyzronth8-unsplash.png" alt=""></div>
-                <h1>The Bright Future of Web 3.0?</h1>
-                <p>We dive into the next evolution of the web that claims to put the power of the platforms back into
-                    the
-                    hands
-                    of the people. But is it really fulfilling its promise?</p>
-                <a class="hero-link" href="#">Read more</a>
+            <div class="container hero-container">
+                <div class="hero-image"><img src="img/vasilis-chatzopoulos-6lwyzronth8-unsplash.png" alt=""></div>
+                <div class="hero-content">
+                    <h1>The Bright Future of Web 3.0?</h1>
+                    <p>We dive into the next evolution of the web that claims to put the power of the platforms back into
+                        the
+                        hands
+                        of the people. But is it really fulfilling its promise?</p>
+                    <a class="hero-link" href="#">Read more</a>
+                </div>
             </div>
         </section>
 
@@ -72,25 +75,24 @@
     </main>
 
     <section class="top">
-        <div class="container">
-
-            <ul class="top-item">
-                <li>
-                    <div><img src="img\retro_PC.png" alt="image d'ancien pc"></div>
+        <div class="container top-container">
+            <ul class="top-list">
+                <li class="top-item">
+                    <div><img src="img/retro_PC.png" alt="image d'ancien pc"></div>
                     <p class="top-count">01</p>
                     <h2><a class="top-link" href="#">Reviving retro Pcs</a></h2>
                     <p>What happens when old PCs are given modern upgrades?</p>
                 </li>
 
-                <li>
-                    <div><img src="img\laptop.png" alt="image d'un clavier"></div>
+                <li class="top-item">
+                    <div><img src="img/laptop.png" alt="image d'un clavier"></div>
                     <p class="top-count">02</p>
                     <h2><a class="top-link" href="#">Top 10 Laptops of 2022</a></h2>
                     <p>Our best picks for various needs and budgets.</p>
                 </li>
 
-                <li>
-                    <div><img src="img\gaming.png" alt="image d'une manette de playstation"></div>
+                <li class="top-item">
+                    <div><img src="img/gaming.png" alt="image d'une manette de playstation"></div>
                     <p class="top-count">03</p>
                     <h2><a class="top-link" href="#">The Growth of Gaming</a></h2>
                     <p>How the pandemic has sparked fresh opportunities.</p>
