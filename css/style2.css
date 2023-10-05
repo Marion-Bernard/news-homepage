@@ -61,14 +61,14 @@
     color: #E9AA52;
   }
 
-  /********Container********/
+/********Container********/
 
   .container{
     /*width: min(100%,71.375rem); (prend la plus petite des deux valeurs, revient à donner une valeur max. 71.375rem; /*69.375 contenu + 1rem de padding gauche + 1rem padding droite*/
     width: 100%;
     margin-inline : auto;
     padding-inline: 1rem;
-    background-color: aquamarine;
+    flex-wrap: wrap;
   }
 
   /*resposive container, mettre valeur en em, donc base 16*/
@@ -93,7 +93,25 @@
     }
   }
 
-  /********HEADER********/
+/********LAYOUT GENERAL ********/
+   body{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:4rem;
+  }
+
+  @media  screen and (min-width:75em) {
+    body{
+      grid-template-columns: 2fr 1fr;
+    }
+    header,
+    .top{
+      grid-column: span 2;
+    }
+
+  }
+
+/********HEADER********/
 
   .main-header .container{
     display: flex;
@@ -101,6 +119,14 @@
     justify-content: space-between; /*jcsb en emmet*/
     align-items: center;
   }
+
+  .main-header {
+    position: sticky;
+    top: 0;
+    z-index: 10002;
+    padding-block: 2rem;
+    background-color: #FFFDFA;
+}
 
   .menu{
     display: none;
@@ -115,7 +141,18 @@
     }
   }
 
-  /********HERO********/
+/********HERO********/
+@media  screen and (min-width:75em) {
+ .hero-container{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero-image{
+    grid-column: span 2;
+  }
+
+}
+
 
  .hero p {
     margin-bottom: 1.5rem;
@@ -134,10 +171,56 @@
     background-color: #00001A;
   }
 
-  /********TOP 3********/
+/********NEWS********/
+
+.news-container{
+  display: grid;
+  gap:1.81rem;
+}
+
+.news-item{
+  display: grid;
+  gap:1.81rem;
+}
+.news-list{
+  border-bottom: 1px solid #5E607A;;
+}
+
+.news-list p {
+  padding-bottom: 1.81rem;
+}
+
+.news-link {
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.5rem;
+  /* 120% */
+  color: #FFFDFA;
+  margin-bottom: 0.5rem;
+}
+
+.news p {
+  color: #C5C6CE;
+  font-size: 0.9375rem;
+  line-height: 1.625rem;
+  /* 173.333% */
+}
+
+.news-container {
+  background-color: #00001A;
+}
+
+
+
+  
+/********TOP 3********/
+
+  .top-list{
+    display: grid;
+    gap:1.81rem
+  }
 @media  screen and (min-width:75em) {
     .top-list{
-    display: grid;
     grid-template-columns: repeat(3,1fr);
     gap : 2.6rem;
   }
@@ -154,21 +237,9 @@
 }
 .top-item-content{
   padding-left:  1.5rem;
-
-
 }
 
 /********A CLASSER********/
-
-
-
-  .news-list{
-    border-bottom: 1px solid #5E607A;
-    border : 1px solid red;
-    padding: 1.81rem;
-    margin: 0.8rem;
-    /*padding-bottom: 1.81rem;*/
-  }
 
   .menu-link {
     color: #00001A;
@@ -176,21 +247,7 @@
     font-size: 1.125rem;
   }
 
-  .news-link {
-    font-size: 1.25rem;
-    font-weight: 800;
-    line-height: 1.5rem;
-    /* 120% */
-    color: #FFFDFA;
-    margin-bottom: 0.5rem;
-  }
-
-  .news p {
-    color: #C5C6CE;
-    font-size: 0.9375rem;
-    line-height: 1.625rem;
-    /* 173.333% */
-  }
+ 
 
   .top-count {
     font-size: 2rem;
@@ -209,6 +266,3 @@
     color: #00001A;
   }
 
-  .news {
-    background-color: #00001A;
-  }
