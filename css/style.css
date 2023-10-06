@@ -177,7 +177,7 @@
       top: 100%;  
       right: 0;
       left:39%;
-      height: 100vh;
+      height: calc(100dvh - 92px);
       background-color: #FFFDFA;
       padding-top: calc(9rem - 92px); 
     }
@@ -187,13 +187,18 @@
       left: -10rem;
       right:61%;
       z-index: 2;
-      height: 100vh;
+      height: 100dvh;
       background-color:rgba(0, 0,26, 0.5)
     }
 
     .menu-link {
       color: #00001A;
       font-size: 1.125rem;
+      transition: 0.3s ease-in-out;
+    }
+
+    .menu-link:hover{
+      color: #F15D51;
     }
     .menu-item{
       padding-bottom: 1rem;
@@ -219,7 +224,7 @@
       padding: 1rem;
       margin: 0.25rem;
       color: #5E607A;
-      transition: 0.5s;
+      transition: 0.3s ease-in-out;
     }
 
     .menu-link:hover{
@@ -254,7 +259,7 @@
     background-color: #F15D51;
     padding: 0.81rem 1.94rem;
     height: 3rem;
-    transition:0.5s;
+    transition:0.5s ease-in-out;
   }
 
   .hero-link:hover {
