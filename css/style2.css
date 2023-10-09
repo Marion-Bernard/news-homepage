@@ -1,0 +1,370 @@
+  /* inter-regular - latin_latin-ext */
+  @font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/inter-v13-latin_latin-ext-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  /* inter-700 - latin_latin-ext */
+  @font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/inter-v13-latin_latin-ext-700.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  /* inter-800 - latin_latin-ext */
+  @font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    src: url('../fonts/inter-v13-latin_latin-ext-800.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  /********Typographie********/
+
+  body {
+    font-family: Inter, sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    /*line-height: 1.625; ratio propotionnel à la taille de la police*/
+    line-height: calc(26/16);
+    /*Dans la maquette, un interligne de 26px pour une taille de police de 16px)*/
+    color: #5E607A;
+    background-color: #FFFDFA;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  h1 {
+    color: #00001A;
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 2.5rem;
+    /* 100% */
+    margin: 1.5rem 0rem 1rem 0rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #E9AA52;
+  }
+
+  :focus-visible{
+    outline: 0.1rem solid  #E9AA52 ;
+    outline-offset: 0.1rem;
+  }
+
+  /********Container********/
+
+  .wrapper {
+    /*width: min(100%,71.375rem); (prend la plus petite des deux valeurs, revient à donner une valeur max. 71.375rem; /*69.375 contenu + 1rem de padding gauche + 1rem padding droite*/
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /*resposive container, mettre valeur en em, donc base 16*/
+  @media screen and (min-width:36em) {
+    .wrapper {
+      max-width: 33.75rem;
+    }
+  }
+
+  @media screen and (min-width:48em) {
+    .wrapper {
+      max-width: 45rem;
+    }
+  }
+
+  @media screen and (min-width:62em) {
+    .wrapper {
+      max-width: 60rem;
+    }
+  }
+
+  @media screen and (min-width:75em) {
+    .wrapper {
+      max-width: 71.375rem;
+    }
+  }
+
+  /********LAYOUT GENERAL ********/
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media screen and (min-width:75em) {
+    body {
+      grid-template-columns: 2fr 1fr;
+    }
+
+    header,
+    .top {
+      grid-column: span 2;
+    }
+
+  }
+
+  /********HEADER********/
+
+  .main-header .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /*jcsb en emmet*/
+    align-items: center;
+  }
+
+  .main-header {
+    position: sticky;
+    top: 0;
+    z-index: 10002;
+    padding-block: 2rem;
+    background-color: #FFFDFA;
+  }
+
+  .toggle-menu{
+    display: grid;
+    gap: 0.25rem;
+    background-color: #FFFDFA;
+    border: none;
+}
+
+  .barres {
+    width: 2.5rem;
+    height: 0.2rem;
+    background-color: #00001A;
+  }
+
+  .toggle-menu[aria-expanded="true"]{
+    padding: 0.5rem;
+  }
+
+  .toggle-menu[aria-expanded="true"] .barres:first-child{
+    transform: translateY(0.45rem) rotate(45deg);
+  }
+
+  .toggle-menu[aria-expanded="true"] .barres:nth-child(2){
+    opacity:0;
+  }
+
+  .toggle-menu[aria-expanded="true"] .barres:last-child{
+    transform: translateY(-0.45rem) rotate(-45deg);
+  }
+
+/***********Menu mobile**************/
+
+  @media screen and (max-width:48em) {
+    .menu {
+      position: absolute;
+      top: 100%;  
+      right: 0;
+      left:39%;
+      height: calc(100dvh - 92px);
+      background-color: #FFFDFA;
+      padding-top: calc(9rem - 92px); 
+    }
+    .menu-bordure{
+      position: absolute;
+      top: 0;
+      left: -10rem;
+      right:61%;
+      z-index: 2;
+      height: 100dvh;
+      background-color:rgba(0, 0,26, 0.5)
+    }
+
+    .menu-link {
+      color: #00001A;
+      font-size: 1.125rem;
+      transition: 0.3s ease-in-out;
+    }
+
+    .menu-link:hover{
+      color: #F15D51;
+    }
+    .menu-item{
+      padding-bottom: 1rem;
+      margin-bottom: 0.5rem;
+      padding-left: 1.5rem;
+    }
+
+  }
+
+  /***********Menu desktop**************/
+
+  @media screen and (min-width:48em) {
+    .toggle-menu {
+      display: none;
+    }
+
+    .menu {
+      display: flex;
+    }
+
+    .menu-link {
+      display: block;
+      padding: 1rem;
+      margin: 0.25rem;
+      color: #5E607A;
+      transition: 0.3s ease-in-out;
+    }
+
+    .menu-link:hover{
+      color:#F15D51;
+    }
+
+    .menu-link:focus{
+      color:#F15D51;
+    }
+  }
+
+  /********HERO********/
+  @media screen and (min-width:75em) {
+    .hero-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-image {
+      grid-column: span 2;
+    }
+  }
+
+  .hero p {
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-link {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.27344rem;
+    background-color: #F15D51;
+    padding: 0.81rem 1.94rem;
+    height: 3rem;
+    transition:0.5s ease-in-out;
+  }
+
+  .hero-link:hover {
+    background-color: #00001A;
+  }
+
+  .hero-link:focus {
+    background-color: #00001A;
+  }
+
+  .hero-image img{
+    width: 100%;
+  }
+
+  /********NEWS********/
+
+  .news-container {
+    display: grid;
+    gap: 1.81rem;
+    padding: 1.5rem 1.25rem 1.5rem 1.31rem;
+  }
+
+  .news-item {
+    display: grid;
+    gap: 1.81rem;
+  }
+
+  .news-list {
+    border-bottom: 1px solid #5E607A;
+  }
+
+  .news-list p {
+    padding-bottom: 1.81rem;
+  }
+
+  .news-link {
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1.5rem;
+    /* 120% */
+    color: #FFFDFA;
+    margin-bottom: 0.5rem;
+  }
+
+  .news-link:hover,
+  .news-link:focus {
+    color: #E9AA52;
+  }
+
+  .news p {
+    color: #C5C6CE;
+    font-size: 0.9375rem;
+    line-height: 1.625rem;
+    /* 173.333% */
+  }
+
+  .news-container {
+    background-color: #00001A;
+  }
+
+  /********TOP 3********/
+
+  .top-list {
+    display: grid;
+    gap: 1.81rem
+  }
+
+  @media screen and (min-width:75em) {
+    .top-list {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.6rem;
+    }
+  }
+
+  .top-item {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .top-item-image {
+    min-width: 100px;
+  }
+
+  .top-item-content {
+    padding-left: 1.5rem;
+  }
+
+  .top-count {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2rem;
+    /* 100% */
+    color: #C5C6CE;
+  }
+
+  .top-link {
+
+    font-size: 1.125rem;
+    font-weight: 800;
+    line-height: 1.5rem;
+    /* 133.333% */
+    color: #00001A;
+  }
+
+  .top-link:hover,
+  .top-link:focus{
+    color: #F15D51;
+  }
